@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Task;
 use App\Http\Requests\TaskRequest;
 
@@ -41,10 +40,25 @@ class TaskController extends Controller
         }
     }
 
-    public function destroy($id)
+    public function update(TaskRequest $request,Task $task)
     {
-        $data = Task::where('id',$id)->delete();
-        if ($data == 1) {
+        try {
+            $task->update($request->validated());
+            return response()->json([
+                'status' => true,
+                'message' => 'Task Updated Successfully',
+            ], 200);
+        } catch (\Throwable $th) {
+            return response()->json([
+                'status' => false,
+                'message' => $th->getMessage()
+            ], 500);
+        }
+    }
+
+    public function destroy(Task $task)
+    {
+        if ($task->delete() == true) {
             return response()->json([
                 'status' => true,
                 'message' => 'Task Deleted Successfully',

@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 use App\Models\Todo;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
 use App\Http\Requests\TodoRequest;
 
 class TodoController extends Controller
@@ -42,10 +40,25 @@ class TodoController extends Controller
         }
     }
 
-    public function destroy($id)
+    public function update(TodoRequest $request,Todo $todo)
     {
-        $data = Todo::where('id',$id)->delete();
-        if ($data == 1) {
+        try {
+            $todo->update($request->validated());
+            return response()->json([
+                'status' => true,
+                'message' => 'Todo Updated Successfully',
+            ], 200);
+        } catch (\Throwable $th) {
+            return response()->json([
+                'status' => false,
+                'message' => $th->getMessage()
+            ], 500);
+        }
+    }
+
+    public function destroy(Todo $todo)
+    {
+        if ($todo->delete() == true) {
             return response()->json([
                 'status' => true,
                 'message' => 'Todo Deleted Successfully',

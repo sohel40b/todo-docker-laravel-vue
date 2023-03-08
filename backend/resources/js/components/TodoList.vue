@@ -38,6 +38,7 @@
                                             <p>{{todo.status}}</p>
                                         </td>
                                         <td class="align-middle">
+                                            <button class="btn btn-success mx-2">Edit</button>
                                             <button class="btn btn-danger" @click="deleteData(todo.id)">Delete</button>
                                         </td>
                                     </tr>
