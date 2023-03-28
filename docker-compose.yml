@@ -46,6 +46,19 @@ services:
       SERVICE_NAME: mysql
     networks:
       - network
+  
+  #phpmyadmin service
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 8090:80
+    environment:
+      - PMA_HOST=mysql
+    depends_on:
+      - mysql
+    networks:
+      - network
 
 #Docker Networks
 networks:
