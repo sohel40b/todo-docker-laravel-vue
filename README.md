@@ -13,15 +13,14 @@ This is an example of how you may give instructions on setting up your project l
    ```sh
    git clone https://github.com/sohel40b/todo-docker-laravel-vue.git
    ```
-2. Run command with terminal
+2. Switch to the project folder and open terminal 
    ```sh
    docker-compose build
    ```
-3. Run command with terminal
    ```sh
    docker-compose up -d
    ```
-4. Open Docker-Desktop app and run command in php image terminal
+3. Open Docker-Desktop app and run command in php image terminal
    ```sh
    cp .env.example .env
    ```
@@ -34,16 +33,16 @@ This is an example of how you may give instructions on setting up your project l
    ```sh
    php artisan migrate
    ```
-5. Change your code in `.env`
+4. Change your code in `.env`
    ```js
    DB_HOST: mysql
    APP_URL: http://localhost:8000
    ```
-6. Finally install and run server
+5. Finally install and run server
    ```sh
    npm install
    ```
-    ```sh
+   ```sh
    npm run dev
    ```
    
@@ -56,5 +55,12 @@ This is an example of how you may give instructions on setting up your project l
         }
     },
    ```
+<!-- Documentation -->
+## Documentation
+
+Documentation URL provide below.
+```sh
+http://localhost:8000/request-docs/
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
