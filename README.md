@@ -38,7 +38,7 @@ This is an example of how you may give instructions on setting up your project l
    DB_HOST: mysql
    APP_URL: http://localhost:8000
    ```
-5. Finally install and run server
+5. Finally install and run server in php image terminal
    ```sh
    npm install
    ```
