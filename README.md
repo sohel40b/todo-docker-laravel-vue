@@ -30,13 +30,16 @@ This is an example of how you may give instructions on setting up your project l
    ```sh
    php artisan key:generate 
    ```
+   Edit .env file
+   ```sh
+   DB_HOST: mysql
+   DB_PORT=3306
+   DB_DATABASE=laravel
+   DB_USERNAME=root
+   DB_PASSWORD=root
+   ```
    ```sh
    php artisan migrate
-   ```
-4. Change your code in `.env`
-   ```js
-   DB_HOST: mysql
-   APP_URL: http://localhost:8000
    ```
 5. Finally install and run server in php image terminal
    ```sh
