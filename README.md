@@ -32,7 +32,7 @@ This is an example of how you may give instructions on setting up your project l
    ```
    Edit .env file
    ```sh
-   DB_HOST: mysql
+   DB_HOST:mysql
    DB_PORT=3306
    DB_DATABASE=laravel
    DB_USERNAME=root
